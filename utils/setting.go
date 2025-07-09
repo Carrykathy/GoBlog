@@ -19,7 +19,7 @@ var (
 )
 
 func init() {
-	file, err := ini.Load("../config/config.ini")
+	file, err := ini.Load("config/config.ini")
 	if err != nil {
 		fmt.Println("配置文件读取错误，请检查文件路径:", err)
 	}
@@ -29,7 +29,7 @@ func init() {
 
 func LoadServer(file *ini.File) {
 	AppMode = file.Section("server").Key("AppMode").MustString("debug")
-	HttpPort = file.Section("server").Key("HtttpPort").MustString(":3000")
+	HttpPort = file.Section("server").Key("HttpPort").MustString(":3000")
 
 }
 
